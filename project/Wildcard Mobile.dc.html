@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;background:#111010;color:#F1EDE4;font-family:Archivo,'Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#F1EDE4;text-decoration:none}a:hover{color:#C8452C}
+::selection{background:#8B1A1A;color:#F1EDE4}
+.wc-screen{scrollbar-width:none}
+.wc-screen::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+
+<div data-screen-label="Mobile screens" style="min-height:100vh;padding:56px 48px 72px">
+  <div style="max-width:1440px;margin:0 auto">
+    <div style="margin-bottom:36px">
+      <div style="font-size:12px;letter-spacing:3.5px;font-weight:600;color:#B71925;margin-bottom:10px">WILDCARD — MOBILE</div>
+      <h1 style="margin:0;font-family:Oswald,sans-serif;font-weight:600;font-size:38px;text-transform:uppercase;letter-spacing:1px">Home · Menu drawer · Cart drawer</h1>
+    </div>
+    <div style="display:flex;gap:44px;align-items:flex-start;flex-wrap:wrap">
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:11px;letter-spacing:2.5px;color:#8D8D8D">01 — MOBILE HOMEPAGE</span>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="400px,840px">
+          <div class="wc-screen" style="height:100%;overflow-y:auto;overflow-x:hidden;background:#0A0A0A;color:#F1EDE4;font-family:Archivo,sans-serif;padding-top:58px;box-sizing:border-box">
+            <div style="background:#8B1A1A;text-align:center;padding:7px 12px;font-size:9.5px;letter-spacing:2px;font-weight:600">FREE U.S. SHIPPING OVER $100</div>
+            <div style="display:grid;grid-template-columns:44px 1fr 44px;align-items:center;padding:10px 14px;border-bottom:1px solid #1F1D1B">
+              <div style="display:flex;flex-direction:column;gap:5px;width:22px"><span style="height:2px;background:#F1EDE4"></span><span style="height:2px;background:#F1EDE4"></span><span style="height:2px;background:#F1EDE4"></span></div>
+              <img src="assets/wordmark-white.png" alt="Wildcard Jiu Jitsu" style="height:30px;justify-self:center">
+              <div style="position:relative;justify-self:end;border:1px solid #2a2724;padding:7px 9px;font-size:10px;letter-spacing:1px;font-weight:700">CART<span style="position:absolute;top:-7px;right:-7px;background:#8B1A1A;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:9px">2</span></div>
+            </div>
+            <div style="position:relative;padding:30px 20px 22px;border-bottom:1px solid #1F1D1B;overflow:hidden;box-sizing:border-box;max-width:100%">
+              <img src="assets/hat-red.png" alt="" style="position:absolute;right:-70px;top:-40px;width:280px;opacity:.08">
+              <div style="font-size:10px;letter-spacing:3px;font-weight:600;color:#B71925;margin-bottom:12px">♠ FIRST DROP — FW26</div>
+              <div style="font-family:Oswald,sans-serif;font-weight:600;font-size:44px;line-height:.95;text-transform:uppercase;margin-bottom:14px">Stay<br>Unpredictable</div>
+              <p style="margin:0 0 18px;color:#A8A29A;font-size:13px;line-height:1.55">Technical BJJ equipment for grapplers who never show their hand.</p>
+              <img src="assets/gi-black-jacket-front.png" alt="Classic Gi black" style="width:100%;display:block;margin-bottom:18px">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <span style="background:#8B1A1A;text-align:center;padding:15px;font-size:11px;letter-spacing:2.5px;font-weight:700">SHOP THE FIRST DROP</span>
+                <span style="border:1px solid #35312d;text-align:center;padding:14px;font-size:11px;letter-spacing:2.5px;font-weight:700">EXPLORE WILDCARD</span>
+              </div>
+            </div>
+            <div style="padding:22px 20px;border-bottom:1px solid #1F1D1B">
+              <div style="position:relative;background:#121212;border:1px solid #1F1D1B;padding:20px;overflow:hidden;margin-bottom:12px;min-height:120px;box-sizing:border-box">
+                <img src="assets/rg-suits-front.png" alt="" style="position:absolute;right:-24px;bottom:-40px;width:150px">
+                <div style="font-size:9px;letter-spacing:2.5px;color:#B71925;font-weight:700;margin-bottom:6px">NO-GI</div>
+                <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:600;text-transform:uppercase">Rash Guards →</div>
+              </div>
+              <div style="position:relative;background:#F1EDE4;color:#131313;padding:20px;overflow:hidden;min-height:120px;box-sizing:border-box">
+                <img src="assets/gi-white-jacket-front.png" alt="" style="position:absolute;right:-40px;bottom:-30px;width:170px">
+                <div style="font-size:9px;letter-spacing:2.5px;color:#8B1A1A;font-weight:700;margin-bottom:6px">GI</div>
+                <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:600;text-transform:uppercase">Gis →</div>
+              </div>
+            </div>
+            <div style="padding:22px 20px 30px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+                <span style="font-family:Oswald,sans-serif;font-size:20px;font-weight:600;letter-spacing:1px">THE FIRST HAND</span>
+                <span style="font-size:10px;letter-spacing:2px;color:#C8452C;font-weight:700">VIEW ALL →</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <div style="background:#121212;border:1px solid #1F1D1B">
+                  <div style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;padding:10px"><img src="assets/rg-classic-front.png" alt="Classic Rash Guard" style="max-width:100%;max-height:100%;object-fit:contain"></div>
+                  <div style="padding:10px 12px 12px"><div style="font-size:12px;font-weight:600">Classic Rash Guard</div><div style="font-size:11px;color:#8D8D8D;margin-top:2px">$75</div></div>
+                </div>
+                <div style="background:#121212;border:1px solid #1F1D1B">
+                  <div style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;padding:10px"><img src="assets/shorts-classic-front.png" alt="Classic Grappling Shorts" style="max-width:100%;max-height:100%;object-fit:contain"></div>
+                  <div style="padding:10px 12px 12px"><div style="font-size:12px;font-weight:600">Classic Shorts</div><div style="font-size:11px;color:#8D8D8D;margin-top:2px">$55</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:11px;letter-spacing:2.5px;color:#8D8D8D">02 — MENU DRAWER</span>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="400px,840px">
+          <div style="height:100%;position:relative;background:#0A0A0A;color:#F1EDE4;font-family:Archivo,sans-serif;overflow:hidden">
+            <div style="position:absolute;inset:0;background:#0A0A0A;opacity:.55"></div>
+            <div style="position:absolute;top:0;left:0;bottom:0;width:86%;background:#121212;border-right:1px solid #2a2724;display:flex;flex-direction:column;padding-top:58px;box-sizing:border-box">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #1F1D1B">
+                <img src="assets/wordmark-white.png" alt="Wildcard Jiu Jitsu" style="height:28px">
+                <span style="color:#8D8D8D;font-size:20px;line-height:1">✕</span>
+              </div>
+              <div style="flex:1;padding:8px 0;display:flex;flex-direction:column">
+                <span style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-family:Oswald,sans-serif;font-size:24px;font-weight:600;letter-spacing:1px;border-bottom:1px solid #1F1D1B;color:#C8452C">SHOP ALL <span style="color:#8B1A1A">→</span></span>
+                <span style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-family:Oswald,sans-serif;font-size:24px;font-weight:600;letter-spacing:1px;border-bottom:1px solid #1F1D1B">RASH GUARDS <span style="color:#4d4a46">→</span></span>
+                <span style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-family:Oswald,sans-serif;font-size:24px;font-weight:600;letter-spacing:1px;border-bottom:1px solid #1F1D1B">GIS <span style="color:#4d4a46">→</span></span>
+                <span style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-family:Oswald,sans-serif;font-size:24px;font-weight:600;letter-spacing:1px;border-bottom:1px solid #1F1D1B">COLLECTIONS <span style="color:#4d4a46">→</span></span>
+                <span style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-family:Oswald,sans-serif;font-size:24px;font-weight:600;letter-spacing:1px;border-bottom:1px solid #1F1D1B">CULTURE <span style="color:#4d4a46">→</span></span>
+                <span style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-family:Oswald,sans-serif;font-size:24px;font-weight:600;letter-spacing:1px;border-bottom:1px solid #1F1D1B">ABOUT <span style="color:#4d4a46">→</span></span>
+                <div style="display:flex;gap:24px;padding:22px 20px;font-size:12px;letter-spacing:2px;font-weight:600;color:#8D8D8D">
+                  <span>SEARCH</span><span>ACCOUNT</span><span>SIZE GUIDE</span>
+                </div>
+              </div>
+              <div style="padding:20px;border-top:1px solid #1F1D1B;display:flex;justify-content:space-between;align-items:center">
+                <span style="font-size:10px;letter-spacing:2px;color:#6b6660">VINCIT QUI SE VINCIT</span>
+                <span style="letter-spacing:6px;color:#4d4a46;font-size:12px">♠ ♥ ♣ ♦</span>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:11px;letter-spacing:2.5px;color:#8D8D8D">03 — CART DRAWER</span>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="400px,840px">
+          <div style="height:100%;position:relative;background:#0A0A0A;color:#F1EDE4;font-family:Archivo,sans-serif;overflow:hidden">
+            <div style="position:absolute;inset:0;background:#0A0A0A;opacity:.55"></div>
+            <div style="position:absolute;left:0;right:0;bottom:0;top:82px;background:#121212;border-top:1px solid #2a2724;border-radius:14px 14px 0 0;display:flex;flex-direction:column">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #1F1D1B">
+                <span style="font-family:Oswald,sans-serif;font-size:19px;font-weight:600;letter-spacing:1.5px">YOUR HAND (2)</span>
+                <span style="color:#8D8D8D;font-size:20px;line-height:1">✕</span>
+              </div>
+              <div style="padding:14px 20px;border-bottom:1px solid #1F1D1B">
+                <div style="display:flex;justify-content:space-between;font-size:10.5px;margin-bottom:7px"><span style="color:#8D8D8D">Free U.S. shipping unlocked ♠</span><span style="color:#8D8D8D">$100</span></div>
+                <div style="height:4px;background:#1F1D1B"><div style="height:4px;background:#8B1A1A;width:100%"></div></div>
+              </div>
+              <div style="flex:1;overflow-y:auto;padding:4px 20px">
+                <div style="display:grid;grid-template-columns:68px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid #1F1D1B;align-items:center">
+                  <div style="border:1px solid #1F1D1B;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:5px;background:radial-gradient(closest-side,#1b1b1b,#121212)"><img src="assets/rg-classic-front.png" alt="Classic Rash Guard" style="max-width:100%;max-height:100%;object-fit:contain"></div>
+                  <div>
+                    <div style="font-weight:600;font-size:12.5px">Classic Rash Guard</div>
+                    <div style="color:#8D8D8D;font-size:10.5px;margin:2px 0 8px">Black / Card Art · M</div>
+                    <div style="display:inline-flex;border:1px solid #2a2724;align-items:center"><span style="width:30px;height:26px;display:flex;align-items:center;justify-content:center">−</span><span style="min-width:20px;text-align:center;font-size:11px">1</span><span style="width:30px;height:26px;display:flex;align-items:center;justify-content:center">+</span></div>
+                  </div>
+                  <div style="text-align:right;display:flex;flex-direction:column;gap:8px;align-items:end"><span style="font-family:Oswald,sans-serif;font-size:14px">$75</span><span style="color:#6b6660;font-size:9.5px;letter-spacing:1px;text-decoration:underline">REMOVE</span></div>
+                </div>
+                <div style="display:grid;grid-template-columns:68px 1fr auto;gap:12px;padding:14px 0;align-items:center">
+                  <div style="border:1px solid #1F1D1B;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:5px;background:radial-gradient(closest-side,#1b1b1b,#121212)"><img src="assets/shorts-classic-front.png" alt="Classic Grappling Shorts" style="max-width:100%;max-height:100%;object-fit:contain"></div>
+                  <div>
+                    <div style="font-weight:600;font-size:12.5px">Classic Grappling Shorts</div>
+                    <div style="color:#8D8D8D;font-size:10.5px;margin:2px 0 8px">Crimson · M</div>
+                    <div style="display:inline-flex;border:1px solid #2a2724;align-items:center"><span style="width:30px;height:26px;display:flex;align-items:center;justify-content:center">−</span><span style="min-width:20px;text-align:center;font-size:11px">1</span><span style="width:30px;height:26px;display:flex;align-items:center;justify-content:center">+</span></div>
+                  </div>
+                  <div style="text-align:right;display:flex;flex-direction:column;gap:8px;align-items:end"><span style="font-family:Oswald,sans-serif;font-size:14px">$55</span><span style="color:#6b6660;font-size:9.5px;letter-spacing:1px;text-decoration:underline">REMOVE</span></div>
+                </div>
+              </div>
+              <div style="padding:16px 20px 22px;border-top:1px solid #1F1D1B">
+                <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:11px;color:#8D8D8D;letter-spacing:1.5px">SUBTOTAL</span><span style="font-family:Oswald,sans-serif;font-size:18px">$130</span></div>
+                <p style="margin:0 0 12px;color:#6b6660;font-size:10.5px">Shipping and taxes calculated at checkout.</p>
+                <div style="background:#8B1A1A;text-align:center;padding:15px;font-size:11px;letter-spacing:2.5px;font-weight:700;margin-bottom:9px">CHECKOUT</div>
+                <div style="text-align:center;color:#8D8D8D;font-size:10px;letter-spacing:1.5px;text-decoration:underline">CONTINUE SHOPPING</div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+    </div>
+    <p style="margin:40px 0 0;color:#6b6660;font-size:13px;max-width:70ch;line-height:1.6">Mobile recomposes the desktop system: single-column hero, stacked category tiles, two-up product grid, full-height menu drawer with 44px+ touch targets, and a bottom-sheet cart. Desktop pages: <a href="Wildcard Home.dc.html" style="color:#C8452C">Home</a> · <a href="Wildcard Shop.dc.html" style="color:#C8452C">Shop</a> · <a href="Wildcard Product Rash Guard.dc.html" style="color:#C8452C">Rash Guard PDP</a> · <a href="Wildcard Product Gi.dc.html" style="color:#C8452C">Gi PDP</a></p>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

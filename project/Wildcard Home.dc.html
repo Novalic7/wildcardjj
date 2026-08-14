@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+body{margin:0;background:#0A0A0A;color:#F1EDE4;font-family:Archivo,'Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#F1EDE4;text-decoration:none}a:hover{color:#C8452C}
+::selection{background:#8B1A1A;color:#F1EDE4}
+input::placeholder{color:#6b6660}
+@keyframes wcFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+
+<div data-screen-label="Homepage" style="min-width:1180px">
+
+<sc-if value="{{ showAnn }}" hint-placeholder-val="{{ true }}">
+<div style="background:#8B1A1A;color:#F1EDE4;display:flex;justify-content:center;gap:40px;padding:9px 20px;font-size:11px;letter-spacing:2.5px;font-weight:600">
+<span>FREE U.S. SHIPPING OVER ${{ threshold }}</span>
+<span style="opacity:.55">♠ ♥ ♣ ♦</span>
+<span>LIMITED FIRST DROP — <a href="#deal-in" style="text-decoration:underline;text-underline-offset:3px;color:#F1EDE4">JOIN THE LIST</a></span>
+</div>
+</sc-if>
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(10,10,10,.9);backdrop-filter:blur(12px);border-bottom:1px solid #1F1D1B">
+  <div style="max-width:1360px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px">
+    <nav aria-label="Primary" style="display:flex;gap:28px;font-size:12px;letter-spacing:2.2px;font-weight:600">
+      <a href="Wildcard Shop.dc.html" style-hover="color:#C8452C">SHOP</a>
+      <a href="Wildcard Product Rash Guard.dc.html" style-hover="color:#C8452C">RASH GUARDS</a>
+      <a href="Wildcard Product Gi.dc.html" style-hover="color:#C8452C">GIS</a>
+      <a href="#culture" style-hover="color:#C8452C">CULTURE</a>
+      <a href="#manifesto" style-hover="color:#C8452C">ABOUT</a>
+    </nav>
+    <a href="#" aria-label="Wildcard Jiu Jitsu home" style="justify-self:center"><img src="assets/wordmark-white.png" alt="Wildcard Jiu Jitsu" style="height:40px;display:block"></a>
+    <div style="display:flex;gap:26px;justify-self:end;align-items:center;font-size:12px;letter-spacing:2.2px;font-weight:600">
+      <a href="Wildcard Shop.dc.html" style-hover="color:#C8452C">SEARCH</a>
+      <a href="#" style-hover="color:#C8452C">ACCOUNT</a>
+      <button onClick="{{ openCart }}" aria-label="Open cart" style="background:none;border:1px solid #2a2724;color:#F1EDE4;font:600 12px Archivo,sans-serif;letter-spacing:2.2px;padding:9px 14px;cursor:pointer;display:flex;gap:8px;align-items:center" style-hover="border-color:#8B1A1A;color:#C8452C" style-focus="outline:2px solid #8B1A1A;outline-offset:2px">CART <span style="background:#8B1A1A;color:#F1EDE4;border-radius:2px;padding:1px 6px;font-size:11px">{{ cartCount }}</span></button>
+    </div>
+  </div>
+</header>
+
+<section data-screen-label="Hero" style="position:relative;overflow:hidden;border-bottom:1px solid #1F1D1B">
+  <img src="assets/hat-red.png" alt="" aria-hidden="true" style="position:absolute;right:-140px;top:-120px;width:760px;opacity:.07;pointer-events:none">
+  <div style="max-width:1360px;margin:0 auto;padding:88px 40px 72px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center">
+    <div style="animation:wcFadeUp .7s ease both">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:26px">
+        <span style="color:#8B1A1A;font-size:14px">♠</span>
+        <span style="font-size:12px;letter-spacing:4px;font-weight:600;color:#B71925">FIRST DROP — FW26</span>
+      </div>
+      <h1 style="margin:0 0 24px;font-family:Oswald,sans-serif;font-weight:600;font-size:104px;line-height:.94;letter-spacing:1px;text-transform:uppercase;text-wrap:balance">Stay<br>Unpredictable</h1>
+      <p style="margin:0 0 36px;max-width:44ch;font-size:17px;line-height:1.6;color:#A8A29A;text-wrap:pretty">Technical BJJ equipment for grapplers who never show their hand.</p>
+      <div style="display:flex;gap:14px">
+        <a href="Wildcard Shop.dc.html" style="background:#8B1A1A;color:#F1EDE4;padding:16px 30px;font-size:13px;letter-spacing:2.5px;font-weight:700" style-hover="background:#A32024;color:#F1EDE4" style-focus="outline:2px solid #F1EDE4;outline-offset:2px">SHOP THE FIRST DROP</a>
+        <a href="#manifesto" style="border:1px solid #35312d;color:#F1EDE4;padding:15px 30px;font-size:13px;letter-spacing:2.5px;font-weight:700" style-hover="border-color:#8B1A1A;color:#C8452C">EXPLORE WILDCARD</a>
+      </div>
+    </div>
+    <div style="position:relative;animation:wcFadeUp .7s .15s ease both">
+      <div style="position:absolute;inset:8% 6%;background:radial-gradient(closest-side,#221512 0%,rgba(10,10,10,0) 72%)"></div>
+      <img src="assets/gi-black-jacket-front.png" alt="Wildcard Classic Gi in black with crimson lapel and Wildcard card patch" style="position:relative;width:100%;display:block">
+      <div style="position:absolute;left:4px;bottom:0;font-size:11px;letter-spacing:2.5px;color:#6b6660">CLASSIC GI — BLACK · PICTURED FROM THE FIRST DROP</div>
+    </div>
+  </div>
+  <div style="border-top:1px solid #1F1D1B">
+    <div style="max-width:1360px;margin:0 auto;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:3px;color:#6b6660">
+      <span>VINCIT QUI SE VINCIT</span>
+      <span style="letter-spacing:12px;color:#4d4a46">♠ ♥ ♣ ♦</span>
+      <span>EST. MMXXV · 38.6274° N, 90.1982° W</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Featured categories" style="display:grid;grid-template-columns:1.35fr 1fr;border-bottom:1px solid #1F1D1B">
+  <a href="Wildcard Shop.dc.html" style="position:relative;display:block;background:#121212;padding:56px;min-height:520px;overflow:hidden;border-right:1px solid #1F1D1B" style-hover="background:#161514">
+    <img src="assets/rg-suits-front.png" alt="Suits Rash Guard — white with card-suit pattern" style="position:absolute;right:-30px;bottom:-60px;width:62%;min-width:420px">
+    <div style="position:relative">
+      <div style="font-size:12px;letter-spacing:3.5px;font-weight:600;color:#B71925;margin-bottom:14px">NO-GI</div>
+      <h2 style="margin:0 0 18px;font-family:Oswald,sans-serif;font-weight:600;font-size:54px;text-transform:uppercase;letter-spacing:1px;color:#F1EDE4">Shop<br>Rash Guards</h2>
+      <span style="display:inline-block;border-bottom:2px solid #8B1A1A;padding-bottom:6px;font-size:13px;letter-spacing:2.5px;font-weight:700;color:#F1EDE4">EXPLORE →</span>
+    </div>
+  </a>
+  <a href="Wildcard Product Gi.dc.html" style="position:relative;display:block;background:#F1EDE4;padding:56px;min-height:520px;overflow:hidden" style-hover="background:#EAE4D7">
+    <img src="assets/gi-white-jacket-front.png" alt="Classic Gi — white with crimson trim" style="position:absolute;right:-70px;bottom:-40px;width:78%;min-width:380px">
+    <div style="position:relative">
+      <div style="font-size:12px;letter-spacing:3.5px;font-weight:600;color:#8B1A1A;margin-bottom:14px">GI</div>
+      <h2 style="margin:0 0 18px;font-family:Oswald,sans-serif;font-weight:600;font-size:54px;text-transform:uppercase;letter-spacing:1px;color:#131313">Shop<br>Gis</h2>
+      <span style="display:inline-block;border-bottom:2px solid #8B1A1A;padding-bottom:6px;font-size:13px;letter-spacing:2.5px;font-weight:700;color:#131313">EXPLORE →</span>
+    </div>
+  </a>
+</section>
+
+<section data-screen-label="First drop products" style="max-width:1360px;margin:0 auto;padding:88px 40px 96px">
+  <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:40px">
+    <div>
+      <div style="font-size:12px;letter-spacing:3.5px;font-weight:600;color:#B71925;margin-bottom:12px">FIRST DROP — LIMITED RELEASE</div>
+      <h2 style="margin:0;font-family:Oswald,sans-serif;font-weight:600;font-size:46px;text-transform:uppercase;letter-spacing:1px">The First Hand</h2>
+    </div>
+    <a href="Wildcard Shop.dc.html" style="font-size:13px;letter-spacing:2.5px;font-weight:700;border-bottom:2px solid #8B1A1A;padding-bottom:6px">VIEW ALL →</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+
+    <div style="background:#121212;border:1px solid #1F1D1B;display:flex;flex-direction:column" style-hover="border-color:#35312d">
+      <a href="Wildcard Product Rash Guard.dc.html" style="position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:radial-gradient(closest-side,#191919,#121212)">
+        <span style="position:absolute;top:14px;left:14px;z-index:2;background:#8B1A1A;color:#F1EDE4;font-size:10px;letter-spacing:2px;font-weight:700;padding:4px 9px">FIRST DROP</span>
+        <img src="assets/rg-classic-front.png" alt="Classic Rash Guard front" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain">
+        <img src="assets/rg-classic-back.png" alt="Classic Rash Guard back with Wildcard card artwork" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain;opacity:0;transition:opacity .25s" style-hover="opacity:1">
+      </a>
+      <button onClick="{{ qa1 }}" style="border:none;border-top:1px solid #1F1D1B;background:#161514;color:#F1EDE4;font:700 11px Archivo,sans-serif;letter-spacing:2.5px;padding:12px;cursor:pointer" style-hover="background:#8B1A1A" style-focus="outline:2px solid #8B1A1A;outline-offset:-3px">QUICK ADD +</button>
+      <div style="padding:16px 16px 18px">
+        <div style="display:flex;justify-content:space-between;gap:10px"><span style="font-weight:600;font-size:15px">Classic Rash Guard</span><span style="font-family:Oswald,sans-serif;font-size:16px">$75</span></div>
+        <div style="color:#8D8D8D;font-size:12.5px;margin-top:4px">No-Gi · Black / Card Art</div>
+      </div>
+    </div>
+
+    <div style="background:#121212;border:1px solid #1F1D1B;display:flex;flex-direction:column" style-hover="border-color:#35312d">
+      <a href="Wildcard Product Rash Guard.dc.html" style="position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:radial-gradient(closest-side,#191919,#121212)">
+        <span style="position:absolute;top:14px;left:14px;z-index:2;background:#8B1A1A;color:#F1EDE4;font-size:10px;letter-spacing:2px;font-weight:700;padding:4px 9px">FIRST DROP</span>
+        <img src="assets/rg-suits-front.png" alt="Suits Rash Guard front" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain">
+        <img src="assets/rg-suits-back.png" alt="Suits Rash Guard back" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain;opacity:0;transition:opacity .25s" style-hover="opacity:1">
+      </a>
+      <button onClick="{{ qa2 }}" style="border:none;border-top:1px solid #1F1D1B;background:#161514;color:#F1EDE4;font:700 11px Archivo,sans-serif;letter-spacing:2.5px;padding:12px;cursor:pointer" style-hover="background:#8B1A1A" style-focus="outline:2px solid #8B1A1A;outline-offset:-3px">QUICK ADD +</button>
+      <div style="padding:16px 16px 18px">
+        <div style="display:flex;justify-content:space-between;gap:10px"><span style="font-weight:600;font-size:15px">Suits Rash Guard</span><span style="font-family:Oswald,sans-serif;font-size:16px">$75</span></div>
+        <div style="color:#8D8D8D;font-size:12.5px;margin-top:4px">No-Gi · White / Suits</div>
+      </div>
+    </div>
+
+    <div style="background:#121212;border:1px solid #1F1D1B;display:flex;flex-direction:column" style-hover="border-color:#35312d">
+      <a href="Wildcard Product Rash Guard.dc.html" style="position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:radial-gradient(closest-side,#191919,#121212)">
+        <img src="assets/shorts-classic-front.png" alt="Classic Grappling Shorts front, crimson" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain">
+        <img src="assets/shorts-classic-back.png" alt="Classic Grappling Shorts back" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain;opacity:0;transition:opacity .25s" style-hover="opacity:1">
+      </a>
+      <button onClick="{{ qa3 }}" style="border:none;border-top:1px solid #1F1D1B;background:#161514;color:#F1EDE4;font:700 11px Archivo,sans-serif;letter-spacing:2.5px;padding:12px;cursor:pointer" style-hover="background:#8B1A1A" style-focus="outline:2px solid #8B1A1A;outline-offset:-3px">QUICK ADD +</button>
+      <div style="padding:16px 16px 18px">
+        <div style="display:flex;justify-content:space-between;gap:10px"><span style="font-weight:600;font-size:15px">Classic Grappling Shorts</span><span style="font-family:Oswald,sans-serif;font-size:16px">$55</span></div>
+        <div style="color:#8D8D8D;font-size:12.5px;margin-top:4px">No-Gi · Crimson</div>
+      </div>
+    </div>
+
+    <div style="background:#121212;border:1px solid #1F1D1B;display:flex;flex-direction:column" style-hover="border-color:#35312d">
+      <a href="Wildcard Product Gi.dc.html" style="position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:radial-gradient(closest-side,#191919,#121212)">
+        <span style="position:absolute;top:14px;left:14px;z-index:2;border:1px solid #8B1A1A;color:#C8452C;font-size:10px;letter-spacing:2px;font-weight:700;padding:4px 9px">GI</span>
+        <img src="assets/gi-white-jacket-front.png" alt="Classic Gi white, jacket front" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain">
+        <img src="assets/gi-white-jacket-back.png" alt="Classic Gi white, jacket back" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain;opacity:0;transition:opacity .25s" style-hover="opacity:1">
+      </a>
+      <button onClick="{{ qa4 }}" style="border:none;border-top:1px solid #1F1D1B;background:#161514;color:#F1EDE4;font:700 11px Archivo,sans-serif;letter-spacing:2.5px;padding:12px;cursor:pointer" style-hover="background:#8B1A1A" style-focus="outline:2px solid #8B1A1A;outline-offset:-3px">QUICK ADD +</button>
+      <div style="padding:16px 16px 18px">
+        <div style="display:flex;justify-content:space-between;gap:10px"><span style="font-weight:600;font-size:15px">Classic Gi — White</span><span style="font-family:Oswald,sans-serif;font-size:16px">$180</span></div>
+        <div style="color:#8D8D8D;font-size:12.5px;margin-top:4px">Gi · White / Crimson trim</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="manifesto" data-screen-label="Brand manifesto" style="position:relative;border-top:1px solid #1F1D1B;border-bottom:1px solid #1F1D1B;overflow:hidden;background:#0D0C0B">
+  <img src="assets/suits-cross-light.png" alt="" aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:640px;opacity:.05;pointer-events:none">
+  <div style="position:relative;max-width:900px;margin:0 auto;padding:110px 40px;text-align:center">
+    <div style="font-size:12px;letter-spacing:3.5px;font-weight:600;color:#B71925;margin-bottom:26px">WHY WILDCARD</div>
+    <p style="margin:0 0 40px;font-family:Oswald,sans-serif;font-weight:500;font-size:40px;line-height:1.25;text-transform:uppercase;letter-spacing:.5px;text-wrap:balance">Some grapplers follow the expected path. Others create problems no game plan can solve. Wildcard is built for the athletes who adapt, take risks, and make the mat their own.</p>
+    <a href="#" style="border:1px solid #35312d;padding:15px 30px;font-size:13px;letter-spacing:2.5px;font-weight:700;display:inline-block" style-hover="border-color:#8B1A1A;color:#C8452C">READ OUR STORY</a>
+  </div>
+</section>
+
+<section data-screen-label="Four suit philosophy" style="max-width:1360px;margin:0 auto;padding:96px 40px">
+  <div style="text-align:center;margin-bottom:56px">
+    <div style="font-size:12px;letter-spacing:3.5px;font-weight:600;color:#B71925;margin-bottom:12px">THE FULL DECK</div>
+    <h2 style="margin:0;font-family:Oswald,sans-serif;font-weight:600;font-size:46px;text-transform:uppercase">A complete grappler plays every suit</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#1F1D1B;border:1px solid #1F1D1B">
+    <div style="background:#0A0A0A;padding:44px 32px" style-hover="background:#121212">
+      <div style="font-size:52px;line-height:1;color:#F1EDE4;margin-bottom:22px">♠</div>
+      <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:600;letter-spacing:1px;margin-bottom:8px">SPADES — STRATEGY</div>
+      <p style="margin:0;color:#8D8D8D;font-size:14px;line-height:1.6;text-wrap:pretty">The game plan behind every grip. Think two exchanges ahead.</p>
+    </div>
+    <div style="background:#0A0A0A;padding:44px 32px" style-hover="background:#121212">
+      <div style="font-size:52px;line-height:1;color:#8B1A1A;margin-bottom:22px">♥</div>
+      <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:600;letter-spacing:1px;margin-bottom:8px">HEARTS — PASSION</div>
+      <p style="margin:0;color:#8D8D8D;font-size:14px;line-height:1.6;text-wrap:pretty">The reason you keep showing up. Round after round, year after year.</p>
+    </div>
+    <div style="background:#0A0A0A;padding:44px 32px" style-hover="background:#121212">
+      <div style="font-size:52px;line-height:1;color:#8B1A1A;margin-bottom:22px">♦</div>
+      <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:600;letter-spacing:1px;margin-bottom:8px">DIAMONDS — PRECISION</div>
+      <p style="margin:0;color:#8D8D8D;font-size:14px;line-height:1.6;text-wrap:pretty">Details win exchanges. Angles, timing, and inches under pressure.</p>
+    </div>
+    <div style="background:#0A0A0A;padding:44px 32px" style-hover="background:#121212">
+      <div style="font-size:52px;line-height:1;color:#F1EDE4;margin-bottom:22px">♣</div>
+      <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:600;letter-spacing:1px;margin-bottom:8px">CLUBS — POWER</div>
+      <p style="margin:0;color:#8D8D8D;font-size:14px;line-height:1.6;text-wrap:pretty">Pressure that changes decisions. Strength applied at the right moment.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Product performance" style="border-top:1px solid #1F1D1B;background:#0D0C0B">
+  <div style="max-width:1360px;margin:0 auto;padding:96px 40px">
+    <div style="font-size:12px;letter-spacing:3.5px;font-weight:600;color:#B71925;margin-bottom:12px">MADE FOR THE MAT</div>
+    <h2 style="margin:0 0 52px;font-family:Oswald,sans-serif;font-weight:600;font-size:46px;text-transform:uppercase">Technical equipment, no theater</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div style="border:1px solid #1F1D1B;background:#0A0A0A;display:grid;grid-template-columns:200px 1fr">
+        <div style="background:radial-gradient(closest-side,#191919,#0A0A0A);display:flex;align-items:center;justify-content:center;padding:18px"><img src="assets/rg-classic-front.png" alt="Classic Rash Guard" style="width:100%;object-fit:contain"></div>
+        <div style="padding:30px 32px">
+          <div style="font-family:Oswald,sans-serif;font-size:20px;font-weight:600;letter-spacing:1px;margin-bottom:18px">RASH GUARDS</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:13.5px">
+            <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #1F1D1B;padding-bottom:10px"><span style="color:#8D8D8D">Fit</span><span>Compression, competition cut</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #1F1D1B;padding-bottom:10px"><span style="color:#8D8D8D">Seams</span><span>Reinforced flatlock</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #1F1D1B;padding-bottom:10px"><span style="color:#8D8D8D">Artwork</span><span>Full sublimation — no peel, no crack</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #1F1D1B;padding-bottom:10px"><span style="color:#8D8D8D">Fabric weight</span><span style="color:#6b6660;font-style:italic">Spec to confirm</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px"><span style="color:#8D8D8D">Waistband</span><span style="color:#6b6660;font-style:italic">Anti-ride — spec to confirm</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="border:1px solid #1F1D1B;background:#0A0A0A;display:grid;grid-template-columns:200px 1fr">
+        <div style="background:radial-gradient(closest-side,#191919,#0A0A0A);display:flex;align-items:center;justify-content:center;padding:18px"><img src="assets/gi-black-jacket-front.png" alt="Classic Gi" style="width:100%;object-fit:contain"></div>
+        <div style="padding:30px 32px">
+          <div style="font-family:Oswald,sans-serif;font-size:20px;font-weight:600;letter-spacing:1px;margin-bottom:18px">GIS</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:13.5px">
+            <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #1F1D1B;padding-bottom:10px"><span style="color:#8D8D8D">Jacket</span><span style="color:#6b6660;font-style:italic">Weave &amp; weight to confirm</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #1F1D1B;padding-bottom:10px"><span style="color:#8D8D8D">Stress points</span><span>Bar-tacked, reinforced</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #1F1D1B;padding-bottom:10px"><span style="color:#8D8D8D">Pants</span><span>Ripstop, rope drawstring</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #1F1D1B;padding-bottom:10px"><span style="color:#8D8D8D">Cut</span><span>Competition</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px"><span style="color:#8D8D8D">Shrinkage</span><span style="color:#6b6660;font-style:italic">Pre-shrunk — to confirm</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="margin:20px 0 0;color:#6b6660;font-size:12px;font-style:italic">Italicized fields are content placeholders awaiting confirmed product specifications. No unverified claims are presented as fact.</p>
+  </div>
+</section>
+
+<section id="culture" data-screen-label="Culture preview" style="max-width:1360px;margin:0 auto;padding:96px 40px">
+  <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:40px">
+    <div>
+      <div style="font-size:12px;letter-spacing:3.5px;font-weight:600;color:#B71925;margin-bottom:12px">FROM THE MAT</div>
+      <h2 style="margin:0 0 10px;font-family:Oswald,sans-serif;font-weight:600;font-size:46px;text-transform:uppercase">More than equipment</h2>
+      <p style="margin:0;color:#8D8D8D;font-size:15px">Stories, people, and moments from the world that built us.</p>
+    </div>
+    <a href="#" style="font-size:13px;letter-spacing:2.5px;font-weight:700;border-bottom:2px solid #8B1A1A;padding-bottom:6px">ENTER THE CULTURE →</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <a href="#" style="display:block;border:1px solid #1F1D1B;background:#121212" style-hover="border-color:#35312d">
+      <div style="aspect-ratio:16/10;background:repeating-linear-gradient(-45deg,#141312,#141312 10px,#100F0E 10px,#100F0E 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px">
+        <img src="assets/monogram.png" alt="" aria-hidden="true" style="width:56px;opacity:.25">
+        <span style="font-size:10px;letter-spacing:2.5px;color:#4d4a46">TRAINING PHOTOGRAPHY — TO SUPPLY</span>
+      </div>
+      <div style="padding:22px 24px 26px">
+        <div style="font-size:11px;letter-spacing:2.5px;color:#B71925;font-weight:700;margin-bottom:10px">MINDSET</div>
+        <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:500;line-height:1.25;margin-bottom:12px;color:#F1EDE4">Why the scrambler wins: building a game nobody can scout</div>
+        <div style="color:#6b6660;font-size:12px;letter-spacing:1px">6 MIN READ</div>
+      </div>
+    </a>
+    <a href="#" style="display:block;border:1px solid #1F1D1B;background:#121212" style-hover="border-color:#35312d">
+      <div style="aspect-ratio:16/10;background:repeating-linear-gradient(-45deg,#141312,#141312 10px,#100F0E 10px,#100F0E 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px">
+        <img src="assets/monogram.png" alt="" aria-hidden="true" style="width:56px;opacity:.25">
+        <span style="font-size:10px;letter-spacing:2.5px;color:#4d4a46">COMPETITION PHOTOGRAPHY — TO SUPPLY</span>
+      </div>
+      <div style="padding:22px 24px 26px">
+        <div style="font-size:11px;letter-spacing:2.5px;color:#B71925;font-weight:700;margin-bottom:10px">COMPETITION</div>
+        <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:500;line-height:1.25;margin-bottom:12px;color:#F1EDE4">First drop, first podium: a team diary from the local circuit</div>
+        <div style="color:#6b6660;font-size:12px;letter-spacing:1px">8 MIN READ</div>
+      </div>
+    </a>
+    <a href="#" style="display:block;border:1px solid #1F1D1B;background:#121212" style-hover="border-color:#35312d">
+      <div style="aspect-ratio:16/10;background:repeating-linear-gradient(-45deg,#141312,#141312 10px,#100F0E 10px,#100F0E 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px">
+        <img src="assets/card-logo-bw.png" alt="" aria-hidden="true" style="width:52px;opacity:.3">
+        <span style="font-size:10px;letter-spacing:2.5px;color:#4d4a46">PROCESS PHOTOGRAPHY — TO SUPPLY</span>
+      </div>
+      <div style="padding:22px 24px 26px">
+        <div style="font-size:11px;letter-spacing:2.5px;color:#B71925;font-weight:700;margin-bottom:10px">PRODUCT</div>
+        <div style="font-family:Oswald,sans-serif;font-size:22px;font-weight:500;line-height:1.25;margin-bottom:12px;color:#F1EDE4">Drawing the Joker: how the Wildcard card artwork was built</div>
+        <div style="color:#6b6660;font-size:12px;letter-spacing:1px">5 MIN READ</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="deal-in" data-screen-label="Email capture" style="background:#8B1A1A">
+  <div style="max-width:1360px;margin:0 auto;padding:84px 40px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div>
+      <h2 style="margin:0 0 16px;font-family:Oswald,sans-serif;font-weight:600;font-size:56px;text-transform:uppercase;color:#F1EDE4">Get dealt in</h2>
+      <p style="margin:0;color:#EBD8CE;font-size:16px;line-height:1.6;max-width:46ch;text-wrap:pretty">Join the Wildcard list for early access to new drops, restocks, competition stories, and members-only releases.</p>
+    </div>
+    <div>
+      <div style="display:flex;gap:10px;margin-bottom:12px">
+        <input value="{{ fname }}" onChange="{{ setFname }}" aria-label="First name (optional)" placeholder="First name (optional)" style="flex:.7;background:#7A1616;border:1px solid #A34032;color:#F1EDE4;padding:15px 16px;font:14px Archivo,sans-serif" style-focus="outline:2px solid #F1EDE4;outline-offset:1px">
+        <input value="{{ email }}" onChange="{{ setEmail }}" aria-label="Email address" placeholder="Email address" style="flex:1;background:#7A1616;border:1px solid #A34032;color:#F1EDE4;padding:15px 16px;font:14px Archivo,sans-serif" style-focus="outline:2px solid #F1EDE4;outline-offset:1px">
+        <button onClick="{{ join }}" style="background:#0A0A0A;color:#F1EDE4;border:none;padding:15px 28px;font:700 13px Archivo,sans-serif;letter-spacing:2.5px;cursor:pointer" style-hover="background:#1c1a18" style-focus="outline:2px solid #F1EDE4;outline-offset:2px">{{ joinLabel }}</button>
+      </div>
+      <div role="status" style="min-height:20px;font-size:13px;color:#F1EDE4;font-weight:600">{{ joinMsg }}</div>
+      <p style="margin:8px 0 0;color:#D8AFA0;font-size:11.5px;line-height:1.5">By joining you agree to receive Wildcard email. Unsubscribe anytime. See our privacy policy. <span style="font-style:italic">(Consent copy to be reviewed before launch.)</span></p>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="border-top:1px solid #1F1D1B;background:#0A0A0A">
+  <div style="max-width:1360px;margin:0 auto;padding:72px 40px 0;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px">
+    <div>
+      <img src="assets/wordmark-white.png" alt="Wildcard Jiu Jitsu" style="height:52px;margin-bottom:20px">
+      <p style="margin:0 0 24px;color:#8D8D8D;font-size:14px;line-height:1.6;max-width:34ch;text-wrap:pretty">Technical BJJ equipment for grapplers who never show their hand. Built for the unexpected.</p>
+      <div style="display:flex;gap:18px;font-size:12px;letter-spacing:2px;font-weight:600;color:#8D8D8D">
+        <a href="#" style="color:#8D8D8D" style-hover="color:#C8452C">INSTAGRAM</a>
+        <a href="#" style="color:#8D8D8D" style-hover="color:#C8452C">TIKTOK</a>
+        <a href="#" style="color:#8D8D8D" style-hover="color:#C8452C">YOUTUBE</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;letter-spacing:2.5px;font-weight:700;margin-bottom:18px;color:#F1EDE4">SHOP</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+        <a href="Wildcard Shop.dc.html" style="color:#8D8D8D" style-hover="color:#C8452C">All products</a>
+        <a href="Wildcard Product Rash Guard.dc.html" style="color:#8D8D8D" style-hover="color:#C8452C">Rash guards</a>
+        <a href="Wildcard Product Gi.dc.html" style="color:#8D8D8D" style-hover="color:#C8452C">Gis</a>
+        <a href="Wildcard Shop.dc.html" style="color:#8D8D8D" style-hover="color:#C8452C">New releases</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;letter-spacing:2.5px;font-weight:700;margin-bottom:18px;color:#F1EDE4">SUPPORT</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+        <a href="Wildcard Product Gi.dc.html" style="color:#8D8D8D" style-hover="color:#C8452C">Size guide</a>
+        <a href="#" style="color:#8D8D8D" style-hover="color:#C8452C">Shipping &amp; returns</a>
+        <a href="#" style="color:#8D8D8D" style-hover="color:#C8452C">FAQ</a>
+        <a href="#" style="color:#8D8D8D" style-hover="color:#C8452C">Contact</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;letter-spacing:2.5px;font-weight:700;margin-bottom:18px;color:#F1EDE4">WILDCARD</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+        <a href="#manifesto" style="color:#8D8D8D" style-hover="color:#C8452C">About</a>
+        <a href="#culture" style="color:#8D8D8D" style-hover="color:#C8452C">Culture</a>
+        <a href="#" style="color:#8D8D8D" style-hover="color:#C8452C">Accessibility</a>
+        <a href="#deal-in" style="color:#8D8D8D" style-hover="color:#C8452C">Join the list</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1360px;margin:0 auto;padding:40px;margin-top:48px;border-top:1px solid #1F1D1B;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#6b6660">
+    <span>© MMXXVI WILDCARD JIU JITSU · <a href="#" style="color:#6b6660" style-hover="color:#C8452C">Privacy</a> · <a href="#" style="color:#6b6660" style-hover="color:#C8452C">Terms</a></span>
+    <span style="letter-spacing:10px;color:#4d4a46">♠ ♥ ♣ ♦</span>
+    <span style="display:flex;gap:8px">
+      <span style="border:1px solid #2a2724;padding:3px 8px;letter-spacing:1px">VISA</span>
+      <span style="border:1px solid #2a2724;padding:3px 8px;letter-spacing:1px">MC</span>
+      <span style="border:1px solid #2a2724;padding:3px 8px;letter-spacing:1px">AMEX</span>
+      <span style="border:1px solid #2a2724;padding:3px 8px;letter-spacing:1px">PAYPAL</span>
+    </span>
+  </div>
+</footer>
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Cart drawer">
+    <div onClick="{{ closeCart }}" style="position:fixed;inset:0;background:rgba(5,5,5,.6);backdrop-filter:blur(2px);z-index:80"></div>
+    <aside role="dialog" aria-label="Shopping cart" style="position:fixed;top:0;right:0;bottom:0;width:430px;background:#121212;border-left:1px solid #2a2724;z-index:90;display:flex;flex-direction:column">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid #1F1D1B">
+        <span style="font-family:Oswald,sans-serif;font-size:20px;font-weight:600;letter-spacing:1.5px">YOUR HAND ({{ cartCount }})</span>
+        <button onClick="{{ closeCart }}" aria-label="Close cart" style="background:none;border:none;color:#8D8D8D;font-size:22px;cursor:pointer;line-height:1" style-hover="color:#C8452C" style-focus="outline:2px solid #8B1A1A">✕</button>
+      </div>
+      <sc-if value="{{ hasItems }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:18px 26px;border-bottom:1px solid #1F1D1B">
+          <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px"><span style="color:#8D8D8D">{{ shipMsg }}</span><span style="color:#8D8D8D">${{ threshold }}</span></div>
+          <div style="height:4px;background:#1F1D1B"><div style="height:4px;background:#8B1A1A;transition:width .3s;width:{{ progressPct }}%"></div></div>
+        </div>
+        <div style="flex:1;overflow-y:auto;padding:10px 26px">
+          <sc-for list="{{ items }}" as="it" hint-placeholder-count="2">
+            <div style="display:grid;grid-template-columns:84px 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid #1F1D1B;align-items:center">
+              <div style="background:radial-gradient(closest-side,#1b1b1b,#121212);border:1px solid #1F1D1B;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:6px"><img src="{{ it.img }}" alt="{{ it.name }}" style="max-width:100%;max-height:100%;object-fit:contain"></div>
+              <div>
+                <div style="font-weight:600;font-size:14px">{{ it.name }}</div>
+                <div style="color:#8D8D8D;font-size:12px;margin:3px 0 10px">{{ it.variant }}</div>
+                <div style="display:inline-flex;border:1px solid #2a2724;align-items:center">
+                  <button onClick="{{ it.dec }}" aria-label="Decrease quantity" style="background:none;border:none;color:#F1EDE4;width:28px;height:26px;cursor:pointer" style-hover="color:#C8452C">−</button>
+                  <span style="min-width:24px;text-align:center;font-size:13px">{{ it.qty }}</span>
+                  <button onClick="{{ it.inc }}" aria-label="Increase quantity" style="background:none;border:none;color:#F1EDE4;width:28px;height:26px;cursor:pointer" style-hover="color:#C8452C">+</button>
+                </div>
+              </div>
+              <div style="text-align:right;display:flex;flex-direction:column;gap:10px;align-items:end">
+                <span style="font-family:Oswald,sans-serif;font-size:16px">${{ it.line }}</span>
+                <button onClick="{{ it.remove }}" style="background:none;border:none;color:#6b6660;font-size:11px;letter-spacing:1.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px" style-hover="color:#C8452C">REMOVE</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:22px 26px;border-top:1px solid #1F1D1B">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;color:#8D8D8D">SUBTOTAL</span><span style="font-family:Oswald,sans-serif;font-size:20px">${{ subtotal }}</span></div>
+          <p style="margin:0 0 16px;color:#6b6660;font-size:12px">Shipping and taxes calculated at checkout.</p>
+          <button style="width:100%;background:#8B1A1A;color:#F1EDE4;border:none;padding:16px;font:700 13px Archivo,sans-serif;letter-spacing:2.5px;cursor:pointer" style-hover="background:#A32024" style-focus="outline:2px solid #F1EDE4;outline-offset:2px">CHECKOUT</button>
+          <div style="text-align:center;margin-top:12px"><a href="Wildcard Shop.dc.html" style="color:#8D8D8D;font-size:12px;letter-spacing:2px;text-decoration:underline;text-underline-offset:3px">CONTINUE SHOPPING</a></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px;text-align:center">
+          <img src="assets/hat-red.png" alt="" aria-hidden="true" style="width:88px;opacity:.5">
+          <div style="font-family:Oswald,sans-serif;font-size:26px;font-weight:600;letter-spacing:1px">YOUR HAND IS EMPTY.</div>
+          <p style="margin:0;color:#8D8D8D;font-size:14px">Choose your equipment and get back on the mat.</p>
+          <a href="Wildcard Shop.dc.html" style="margin-top:8px;background:#8B1A1A;color:#F1EDE4;padding:14px 28px;font-size:12px;letter-spacing:2.5px;font-weight:700" style-hover="background:#A32024;color:#F1EDE4">SHOP THE DROP</a>
+        </div>
+      </sc-if>
+    </aside>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Header&quot;},&quot;freeShippingThreshold&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:100,&quot;min&quot;:0,&quot;max&quot;:500,&quot;unit&quot;:&quot;$&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Commerce&quot;}}">
+class Component extends DCLogic {
+  state = {
+    cartOpen: false,
+    items: [
+      { id: 'rg-classic', name: 'Classic Rash Guard', variant: 'Black / Card Art · M', price: 75, qty: 1, img: 'assets/rg-classic-front.png' }
+    ],
+    fname: '', email: '', emailStatus: 'idle'
+  };
+  componentDidMount() {
+    this._esc = (e) => { if (e.key === 'Escape') this.setState({ cartOpen: false }); };
+    window.addEventListener('keydown', this._esc);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._esc); }
+  add(p) {
+    this.setState(s => {
+      const items = s.items.slice();
+      const found = items.find(i => i.id === p.id);
+      if (found) found.qty += 1; else items.push({ ...p, qty: 1 });
+      return { items, cartOpen: true };
+    });
+  }
+  renderVals() {
+    const threshold = this.props.freeShippingThreshold ?? 100;
+    const items = this.state.items.map(it => ({
+      ...it,
+      line: it.price * it.qty,
+      inc: () => this.setState(s => ({ items: s.items.map(x => x.id === it.id ? { ...x, qty: x.qty + 1 } : x) })),
+      dec: () => this.setState(s => ({ items: s.items.map(x => x.id === it.id ? { ...x, qty: Math.max(1, x.qty - 1) } : x) })),
+      remove: () => this.setState(s => ({ items: s.items.filter(x => x.id !== it.id) }))
+    }));
+    const subtotal = items.reduce((a, b) => a + b.line, 0);
+    const cartCount = items.reduce((a, b) => a + b.qty, 0);
+    const remaining = Math.max(0, threshold - subtotal);
+    const st = this.state.emailStatus;
+    return {
+      showAnn: this.props.showAnnouncement ?? true,
+      threshold, items, subtotal, cartCount,
+      hasItems: items.length > 0, isEmpty: items.length === 0,
+      progressPct: Math.min(100, Math.round(subtotal / threshold * 100)),
+      shipMsg: remaining > 0 ? ('$' + remaining + ' away from free U.S. shipping') : 'Free U.S. shipping unlocked ♠',
+      cartOpen: this.state.cartOpen,
+      openCart: () => this.setState({ cartOpen: true }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      qa1: () => this.add({ id: 'rg-classic', name: 'Classic Rash Guard', variant: 'Black / Card Art · M', price: 75, img: 'assets/rg-classic-front.png' }),
+      qa2: () => this.add({ id: 'rg-suits', name: 'Suits Rash Guard', variant: 'White / Suits · M', price: 75, img: 'assets/rg-suits-front.png' }),
+      qa3: () => this.add({ id: 'shorts-classic', name: 'Classic Grappling Shorts', variant: 'Crimson · M', price: 55, img: 'assets/shorts-classic-front.png' }),
+      qa4: () => this.add({ id: 'gi-white', name: 'Classic Gi — White', variant: 'White / Crimson · A2', price: 180, img: 'assets/gi-white-jacket-front.png' }),
+      fname: this.state.fname, email: this.state.email,
+      setFname: (e) => this.setState({ fname: e.target.value }),
+      setEmail: (e) => this.setState({ email: e.target.value, emailStatus: 'idle' }),
+      joinLabel: st === 'loading' ? 'JOINING…' : (st === 'success' ? 'DEALT IN ♠' : 'JOIN'),
+      joinMsg: st === 'error' ? 'Enter a valid email address to join.' : (st === 'success' ? ('Welcome to the deck' + (this.state.fname ? ', ' + this.state.fname : '') + '. Watch your inbox before the next drop.') : ''),
+      join: () => {
+        const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(this.state.email);
+        if (!ok) { this.setState({ emailStatus: 'error' }); return; }
+        this.setState({ emailStatus: 'loading' });
+        setTimeout(() => this.setState({ emailStatus: 'success' }), 700);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
