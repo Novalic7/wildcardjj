@@ -49,7 +49,7 @@ a{color:#F1EDE4;text-decoration:none}a:hover{color:#C8452C}
 
     <div data-screen-label="Product gallery">
       <div style="position:relative;background:radial-gradient(closest-side,#1a1a1a,#101010);border:1px solid #1F1D1B;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:40px">
-        <span style="position:absolute;top:16px;left:16px;background:#8B1A1A;color:#F1EDE4;font-size:10px;letter-spacing:2px;font-weight:700;padding:4px 9px">FIRST DROP</span>
+        <span style="position:absolute;top:16px;left:16px;background:#8B1A1A;color:#F1EDE4;font-size:10px;letter-spacing:2px;font-weight:700;padding:4px 9px;white-space:nowrap">COMING SOON · PRE-ORDER</span>
         <img src="{{ mainImg }}" alt="{{ mainAlt }}" style="max-width:92%;max-height:92%;object-fit:contain">
         <span style="position:absolute;bottom:16px;right:16px;color:#4d4a46;font-size:10px;letter-spacing:2px">CLICK THUMBNAILS TO SWITCH · ZOOM IN FINAL BUILD</span>
       </div>
@@ -87,7 +87,7 @@ a{color:#F1EDE4;text-decoration:none}a:hover{color:#C8452C}
           <button onClick="{{ s.pick }}" disabled="{{ s.disabled }}" style="min-width:52px;padding:13px 0;border:1px solid {{ s.border }};background:{{ s.bg }};color:{{ s.color }};font:600 13px Archivo,sans-serif;cursor:{{ s.cursor }};text-decoration:{{ s.deco }}" style-hover="border-color:#8B1A1A" style-focus="outline:2px solid #8B1A1A;outline-offset:2px">{{ s.label }}</button>
         </sc-for>
       </div>
-      <div style="color:#6b6660;font-size:12px;margin-bottom:24px">XS is sold out — an example of the sold-out option state. <span style="color:#8D8D8D">Between sizes? Size up for a relaxed fit, down for competition compression.</span></div>
+      <div style="color:#8D8D8D;font-size:12px;margin-bottom:24px">Between sizes? Size up for a relaxed fit, down for competition compression.</div>
 
       <sc-if value="{{ guideOpen }}" hint-placeholder-val="{{ false }}">
         <div data-screen-label="Size guide" style="border:1px solid #2a2724;background:#121212;padding:22px 24px;margin-bottom:24px">
@@ -193,7 +193,7 @@ class Component extends DCLogic {
     const views = this.VIEWS[this.state.color];
     const v = views[Math.min(this.state.view, views.length - 1)];
     const sizes = ['XS', 'S', 'M', 'L', 'XL'].map(sz => {
-      const sold = sz === 'XS';
+      const sold = false; // pre-order: every size is available to reserve
       const on = this.state.size === sz;
       return { label: sz, disabled: sold, pick: () => this.setState({ size: sz }), border: on ? '#8B1A1A' : '#2a2724', bg: on ? '#8B1A1A' : 'transparent', color: sold ? '#4d4a46' : '#F1EDE4', cursor: sold ? 'not-allowed' : 'pointer', deco: sold ? 'line-through' : 'none' };
     });
@@ -213,7 +213,7 @@ class Component extends DCLogic {
       guideOpen: this.state.guideOpen,
       toggleGuide: () => this.setState(s => ({ guideOpen: !s.guideOpen })),
       addBg: this.state.added === 'done' ? '#256B33' : '#8B1A1A',
-      addLabel: this.state.added === 'loading' ? 'ADDING…' : (this.state.added === 'done' ? 'ADDED TO YOUR HAND ✓' : 'ADD TO CART — $' + (75 * this.state.qty)),
+      addLabel: this.state.added === 'loading' ? 'ADDING…' : (this.state.added === 'done' ? 'ADDED TO YOUR HAND ✓' : 'PRE-ORDER — $' + (75 * this.state.qty)),
       addToCart: () => {
         if (this.state.added === 'loading') return;
         this.setState({ added: 'loading' });
