@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<link rel="icon" type="image/png" href="/favicon.png"><script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -29,17 +29,17 @@ select{appearance:none}
 <header style="position:sticky;top:0;z-index:60;background:rgba(10,10,10,.9);backdrop-filter:blur(12px);border-bottom:1px solid #1F1D1B">
   <div style="max-width:1360px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px">
     <nav aria-label="Primary" style="display:flex;gap:28px;font-size:12px;letter-spacing:2.2px;font-weight:600">
-      <a href="Wildcard Shop.dc.html" style="color:#C8452C;border-bottom:2px solid #8B1A1A;padding-bottom:4px">SHOP</a>
-      <a href="Wildcard Product Rash Guard.dc.html" style-hover="color:#C8452C">RASH GUARDS</a>
-      <a href="Wildcard Product Gi.dc.html" style-hover="color:#C8452C">GIS</a>
-      <a href="Wildcard Home.dc.html#culture" style-hover="color:#C8452C">CULTURE</a>
-      <a href="Wildcard Home.dc.html#manifesto" style-hover="color:#C8452C">ABOUT</a>
+      <a href="shop.html" style="color:#C8452C;border-bottom:2px solid #8B1A1A;padding-bottom:4px">SHOP</a>
+      <a href="rash-guard.html" style-hover="color:#C8452C">RASH GUARDS</a>
+      <a href="gi.html" style-hover="color:#C8452C">GIS</a>
+      <a href="index.html#culture" style-hover="color:#C8452C">CULTURE</a>
+      <a href="index.html#manifesto" style-hover="color:#C8452C">ABOUT</a>
     </nav>
-    <a href="Wildcard Home.dc.html" aria-label="Wildcard Jiu Jitsu home" style="justify-self:center"><img src="assets/wordmark-white.png" alt="Wildcard Jiu Jitsu" style="height:40px;display:block"></a>
+    <a href="index.html" aria-label="Wildcard Jiu Jitsu home" style="justify-self:center"><img src="assets/wordmark-white.png" alt="Wildcard Jiu Jitsu" style="height:40px;display:block"></a>
     <div style="display:flex;gap:26px;justify-self:end;align-items:center;font-size:12px;letter-spacing:2.2px;font-weight:600">
       <a href="#" style-hover="color:#C8452C">SEARCH</a>
       <a href="#" style-hover="color:#C8452C">ACCOUNT</a>
-      <a href="Wildcard Home.dc.html" style="border:1px solid #2a2724;padding:9px 14px;display:flex;gap:8px;align-items:center" style-hover="border-color:#8B1A1A;color:#C8452C">CART <span style="background:#8B1A1A;color:#F1EDE4;border-radius:2px;padding:1px 6px;font-size:11px">{{ cartCount }}</span></a>
+      <a href="index.html" style="border:1px solid #2a2724;padding:9px 14px;display:flex;gap:8px;align-items:center" style-hover="border-color:#8B1A1A;color:#C8452C">CART <span style="background:#8B1A1A;color:#F1EDE4;border-radius:2px;padding:1px 6px;font-size:11px">{{ cartCount }}</span></a>
     </div>
   </div>
 </header>
@@ -47,7 +47,7 @@ select{appearance:none}
 <section data-screen-label="Collection hero" style="border-bottom:1px solid #1F1D1B;position:relative;overflow:hidden">
   <img src="assets/suits-cross-light.png" alt="" aria-hidden="true" style="position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:380px;opacity:.05;pointer-events:none">
   <div style="max-width:1360px;margin:0 auto;padding:56px 40px 44px">
-    <div style="font-size:11px;letter-spacing:2.5px;color:#6b6660;margin-bottom:18px"><a href="Wildcard Home.dc.html" style="color:#6b6660" style-hover="color:#C8452C">HOME</a> / <span style="color:#8D8D8D">SHOP</span></div>
+    <div style="font-size:11px;letter-spacing:2.5px;color:#6b6660;margin-bottom:18px"><a href="index.html" style="color:#6b6660" style-hover="color:#C8452C">HOME</a> / <span style="color:#8D8D8D">SHOP</span></div>
     <h1 style="margin:0 0 14px;font-family:Oswald,sans-serif;font-weight:600;font-size:64px;text-transform:uppercase;letter-spacing:1px">All Products</h1>
     <p style="margin:0;color:#8D8D8D;font-size:15px;max-width:60ch;line-height:1.6;text-wrap:pretty">The complete first hand — competition rash guards, grappling shorts, and classic gis. Limited release. When a hand is gone, it's gone.</p>
   </div>
@@ -151,7 +151,7 @@ select{appearance:none}
   <div style="max-width:1360px;margin:0 auto;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#6b6660">
     <span>© MMXXVI WILDCARD JIU JITSU · <a href="#" style="color:#6b6660" style-hover="color:#C8452C">Privacy</a> · <a href="#" style="color:#6b6660" style-hover="color:#C8452C">Terms</a></span>
     <span style="letter-spacing:10px;color:#4d4a46">♠ ♥ ♣ ♦</span>
-    <a href="Wildcard Home.dc.html" style="color:#8D8D8D;letter-spacing:2px" style-hover="color:#C8452C">← BACK TO HOME</a>
+    <a href="index.html" style="color:#8D8D8D;letter-spacing:2px" style-hover="color:#C8452C">← BACK TO HOME</a>
   </div>
 </footer>
 
@@ -161,12 +161,12 @@ select{appearance:none}
 class Component extends DCLogic {
   state = { type: 'all', inStockOnly: false, sort: 'featured', loading: false, cartCount: 1 };
   CATALOG = [
-    { id: 'rg-classic', name: 'Classic Rash Guard', type: 'rash', price: 75, order: 1, meta: 'No-Gi · Black / Card Art', img: 'assets/rg-classic-front.png', img2: 'assets/rg-classic-back.png', alt: 'Classic Rash Guard, black with Wildcard card artwork', href: 'Wildcard Product Rash Guard.dc.html', badge: 'FIRST DROP', badgeKind: 'solid', inStock: true },
-    { id: 'rg-suits', name: 'Suits Rash Guard', type: 'rash', price: 75, order: 2, meta: 'No-Gi · White / Suits', img: 'assets/rg-suits-front.png', img2: 'assets/rg-suits-back.png', alt: 'Suits Rash Guard, white with card-suit pattern', href: 'Wildcard Product Rash Guard.dc.html', badge: 'FIRST DROP', badgeKind: 'solid', inStock: true },
-    { id: 'sh-classic', name: 'Classic Grappling Shorts', type: 'shorts', price: 55, order: 3, meta: 'No-Gi · Crimson', img: 'assets/shorts-classic-front.png', img2: 'assets/shorts-classic-back.png', alt: 'Classic Grappling Shorts, crimson', href: 'Wildcard Product Rash Guard.dc.html', badge: '', badgeKind: '', inStock: true },
-    { id: 'sh-suits', name: 'Suits Grappling Shorts', type: 'shorts', price: 55, order: 4, meta: 'No-Gi · White / Suits', img: 'assets/shorts-suits-front.png', img2: 'assets/shorts-suits-back.png', alt: 'Suits Grappling Shorts, white with card-suit pattern', href: 'Wildcard Product Rash Guard.dc.html', badge: 'LOW STOCK', badgeKind: 'outline', inStock: true },
-    { id: 'gi-white', name: 'Classic Gi — White', type: 'gis', price: 180, order: 5, meta: 'Gi · White / Crimson trim', img: 'assets/gi-white-jacket-front.png', img2: 'assets/gi-white-jacket-back.png', alt: 'Classic Gi in white', href: 'Wildcard Product Gi.dc.html', badge: 'FIRST DROP', badgeKind: 'solid', inStock: true },
-    { id: 'gi-black', name: 'Classic Gi — Black', type: 'gis', price: 185, order: 6, meta: 'Gi · Black / Crimson trim', img: 'assets/gi-black-jacket-front.png', img2: 'assets/gi-black-jacket-back.png', alt: 'Classic Gi in black', href: 'Wildcard Product Gi.dc.html', badge: 'SOLD OUT', badgeKind: 'sold', inStock: false }
+    { id: 'rg-classic', name: 'Classic Rash Guard', type: 'rash', price: 75, order: 1, meta: 'No-Gi · Black / Card Art', img: 'assets/rg-classic-front.png', img2: 'assets/rg-classic-back.png', alt: 'Classic Rash Guard, black with Wildcard card artwork', href: 'rash-guard.html', badge: 'FIRST DROP', badgeKind: 'solid', inStock: true },
+    { id: 'rg-suits', name: 'Suits Rash Guard', type: 'rash', price: 75, order: 2, meta: 'No-Gi · White / Suits', img: 'assets/rg-suits-front.png', img2: 'assets/rg-suits-back.png', alt: 'Suits Rash Guard, white with card-suit pattern', href: 'rash-guard.html', badge: 'FIRST DROP', badgeKind: 'solid', inStock: true },
+    { id: 'sh-classic', name: 'Classic Grappling Shorts', type: 'shorts', price: 55, order: 3, meta: 'No-Gi · Crimson', img: 'assets/shorts-classic-front.png', img2: 'assets/shorts-classic-back.png', alt: 'Classic Grappling Shorts, crimson', href: 'rash-guard.html', badge: '', badgeKind: '', inStock: true },
+    { id: 'sh-suits', name: 'Suits Grappling Shorts', type: 'shorts', price: 55, order: 4, meta: 'No-Gi · White / Suits', img: 'assets/shorts-suits-front.png', img2: 'assets/shorts-suits-back.png', alt: 'Suits Grappling Shorts, white with card-suit pattern', href: 'rash-guard.html', badge: 'LOW STOCK', badgeKind: 'outline', inStock: true },
+    { id: 'gi-white', name: 'Classic Gi — White', type: 'gis', price: 180, order: 5, meta: 'Gi · White / Crimson trim', img: 'assets/gi-white-jacket-front.png', img2: 'assets/gi-white-jacket-back.png', alt: 'Classic Gi in white', href: 'gi.html', badge: 'FIRST DROP', badgeKind: 'solid', inStock: true },
+    { id: 'gi-black', name: 'Classic Gi — Black', type: 'gis', price: 185, order: 6, meta: 'Gi · Black / Crimson trim', img: 'assets/gi-black-jacket-front.png', img2: 'assets/gi-black-jacket-back.png', alt: 'Classic Gi in black', href: 'gi.html', badge: 'SOLD OUT', badgeKind: 'sold', inStock: false }
   ];
   reload(patch) { this.setState({ ...patch, loading: true }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ loading: false }), 450); }
   renderVals() {

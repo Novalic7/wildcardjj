@@ -1,0 +1,33 @@
+# Wildcard Jiu Jitsu — server rules (wildcardjj.com)
+
+# Branded 404 page instead of the default host error page.
+ErrorDocument 404 /404.html
+
+# Canonical host: 301-redirect www -> non-www, preserving https, path and query.
+# (HTTP->HTTPS is already handled at the Hostinger/CDN edge, so we deliberately
+#  do NOT add an %{HTTPS} rule here — behind a CDN that can cause a redirect loop.)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.wildcardjj\.com$ [NC]
+  RewriteRule ^(.*)$ https://wildcardjj.com/$1 [R=301,L]
+</IfModule>
+
+# Caching + light security hardening.
+<IfModule mod_headers.c>
+  # Force HTTPS for a year once a browser has seen the site (HSTS). Safe: the
+  # whole site is already served over HTTPS behind the CDN.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # HTML always revalidates so content updates show up immediately.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  # Runtime script + media cache for a month.
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpg|jpeg|gif|svg|webp|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>

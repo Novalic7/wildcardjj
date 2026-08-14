@@ -3,11 +3,11 @@ node_modules/
 
 # Heavy source uploads — the original design source files (PNGs/PDFs) the clean
 # assets were derived from. Kept locally, but excluded to keep the deploy repo
-# lean & fast. The web pages only ever load project/assets/, never uploads/.
-project/uploads/
+# lean & fast. The web pages only ever load assets/, never uploads/.
+uploads/
 
 # Claude Design editor artifact (not needed to run the site)
-project/.thumbnail
+.thumbnail
 
 # OS / editor junk
 .DS_Store
