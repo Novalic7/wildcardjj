@@ -1140,14 +1140,16 @@
   }
 
   // src/cdn.ts
-  // Self-hosted from /vendor (was unpkg CDN) — same pinned versions
-  // (react@18.3.1, react-dom@18.3.1, @babel/standalone@7.29.0). SRI hashes
-  // are blanked because the files are now same-origin; integrity guards only
-  // matter for third-party CDNs. See vendor/ and .htaccess caching rules.
+  // Self-hosted from /vendor (was unpkg CDN) — pinned react@18.3.1 / react-dom@18.3.1.
+  // SRI hashes blanked because the files are now same-origin (integrity guards only
+  // matter for third-party CDNs). See vendor/ and .htaccess caching rules.
   var REACT_URL = "/vendor/react.production.min.js";
   var REACT_SRI = "";
   var REACT_DOM_URL = "/vendor/react-dom.production.min.js";
   var REACT_DOM_SRI = "";
+  // Babel is intentionally NOT shipped: the only JSX import (ios-frame.jsx) is
+  // precompiled to ios-frame.js, so no runtime JSX compile is needed. If a future
+  // page adds a raw .jsx/.tsx x-import, restore vendor/babel.min.js and this path.
   var BABEL_URL = "/vendor/babel.min.js";
   var BABEL_SRI = "";
   function cdnScriptFor(url, sri) {
