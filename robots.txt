@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /mobile.html
+
+Sitemap: https://wildcardjj.com/sitemap.xml
