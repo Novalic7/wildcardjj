@@ -1,0 +1,9 @@
+{
+  "name": "wildcard-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wildcard Jiu Jitsu — storefront site (v0 from Claude Design handoff). Run `npm start` to preview locally at http://localhost:8091.",
+  "scripts": {
+    "start": "node serve.mjs"
+  }
+}

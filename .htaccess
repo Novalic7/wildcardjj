@@ -1,9 +1,30 @@
-# Private preview — HTTP Basic Auth baked into the repo so protection survives
-# every deploy (independent of hPanel Directory Privacy). Remove this block at
-# public launch. AuthUserFile is relative to this .htaccess (LiteSpeed/Hostinger).
+# ── Private preview — HTTP Basic Auth (baked into the repo so it survives every
+#    deploy). REMOVE this block at public launch. user: wildcard ──
 AuthType Basic
 AuthName "Wildcard - Private Preview"
 AuthUserFile ".htpasswd"
 Require valid-user
 
+# ── Wildcard Jiu Jitsu — server rules (wildcardjj.com) ──
 ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.wildcardjj\.com$ [NC]
+  RewriteRule ^(.*)$ https://wildcardjj.com/$1 [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpg|jpeg|gif|svg|webp|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
