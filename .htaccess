@@ -1,17 +1,18 @@
 # ── Private preview — HTTP Basic Auth (baked into the repo so it survives every
 #    deploy). REMOVE this block at public launch. user: wildcard ──
 AuthType Basic
-AuthName "Wildcard - Private Preview"
+AuthName "The Jitz Guild - Private Preview"
 AuthUserFile ".htpasswd"
 Require valid-user
 
-# ── Wildcard Jiu Jitsu — server rules (wildcardjj.com) ──
+# ── The Jitz Guild — server rules (thejitsguild.com) ──
 ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^www\.wildcardjj\.com$ [NC]
-  RewriteRule ^(.*)$ https://wildcardjj.com/$1 [R=301,L]
+  # normalize any www.<host> -> non-www (works for thejitsguild.com and the old domain)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 </IfModule>
 
 <IfModule mod_headers.c>

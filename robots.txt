@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /mobile.html
 
-Sitemap: https://wildcardjj.com/sitemap.xml
+Sitemap: https://thejitsguild.com/sitemap.xml
