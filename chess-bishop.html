@@ -22,6 +22,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 <link rel="icon" type="image/png" href="/favicon.png"><script src="./support.js"></script>
+<script src="/mobile-nav.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Bishop Rash Guard","image":["https://thejitsguild.com/assets/chess/bishop-front.png"],"description":"Bishop Rash Guard — the Purple Belt tier of the Jitz Guild Chess Collection. Full-sublimation royal purple design, competition cut, sizes XS–XL. Pre-order the first drop.","brand":{"@type":"Brand","name":"The Jitz Guild"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"100.00","availability":"https://schema.org/PreOrder","url":"https://thejitsguild.com/chess-bishop.html"}}</script>
 </head>
 <body>
 <x-dc>
@@ -52,10 +54,10 @@ a{color:#F1EDE4;text-decoration:none}a:hover{color:#C8452C}
       <a href="index.html#culture" style-hover="color:#C8452C">CULTURE</a>
       <a href="index.html#manifesto" style-hover="color:#C8452C">ABOUT</a>
     </nav>
-    <a href="index.html" aria-label="The Jitz Guild home" style="justify-self:center"><img src="assets/jitz-guild-white.png" alt="The Jitz Guild" style="height:40px;display:block"></a>
+    <a href="index.html" aria-label="The Jitz Guild home" style="justify-self:center"><img loading="lazy" decoding="async" src="assets/jitz-guild-white.webp" alt="The Jitz Guild" style="height:40px;display:block"></a>
     <div style="display:flex;gap:26px;justify-self:end;align-items:center;font-size:12px;letter-spacing:2.2px;font-weight:600">
-      <a href="#" style-hover="color:#C8452C">SEARCH</a>
-      <a href="#" style-hover="color:#C8452C">ACCOUNT</a>
+      <a href="shop.html" style-hover="color:#C8452C">SEARCH</a>
+      <a href="contact.html" style-hover="color:#C8452C">ACCOUNT</a>
       <a href="index.html" style="border:1px solid #2a2724;padding:9px 14px;display:flex;gap:8px;align-items:center" style-hover="border-color:#8B1A1A;color:#C8452C">CART <span style="background:#8B1A1A;color:#F1EDE4;border-radius:2px;padding:1px 6px;font-size:11px">{{ cartCount }}</span></a>
     </div>
   </div>
@@ -69,13 +71,13 @@ a{color:#F1EDE4;text-decoration:none}a:hover{color:#C8452C}
     <div data-screen-label="Product gallery">
       <div style="position:relative;background:#ffffff;border:1px solid #1F1D1B;border-top:4px solid #5C2E91;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:40px">
         <span style="position:absolute;top:16px;left:16px;background:#8B1A1A;color:#F1EDE4;font-size:10px;letter-spacing:2px;font-weight:700;padding:4px 9px;white-space:nowrap">COMING SOON · PRE-ORDER</span>
-        <img src="{{ mainImg }}" alt="{{ mainAlt }}" style="max-width:92%;max-height:92%;object-fit:contain">
+        <img loading="lazy" decoding="async" src="{{ mainImg }}" alt="{{ mainAlt }}" style="max-width:92%;max-height:92%;object-fit:contain">
         <span style="position:absolute;bottom:16px;right:16px;color:#4d4a46;font-size:10px;letter-spacing:2px">CLICK THUMBNAILS TO SWITCH · ZOOM IN FINAL BUILD</span>
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px">
         <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="4">
           <button onClick="{{ t.pick }}" aria-label="{{ t.label }}" style="background:#ffffff;border:1px solid {{ t.border }};aspect-ratio:1;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px" style-hover="border-color:#8B1A1A" style-focus="outline:2px solid #8B1A1A;outline-offset:2px">
-            <img src="{{ t.img }}" alt="" style="max-width:82%;max-height:70%;object-fit:contain">
+            <img loading="lazy" decoding="async" src="{{ t.img }}" alt="" style="max-width:82%;max-height:70%;object-fit:contain">
             <span style="font-size:9px;letter-spacing:1.5px;color:#6b6660">{{ t.label }}</span>
           </button>
         </sc-for>
@@ -155,15 +157,15 @@ a{color:#F1EDE4;text-decoration:none}a:hover{color:#C8452C}
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <a href="shop.html" style="display:block;background:#121212;border:1px solid #1F1D1B" style-hover="border-color:#35312d">
-        <div style="aspect-ratio:4/5;background:radial-gradient(closest-side,#191919,#121212);display:flex;align-items:center;justify-content:center;padding:8%"><img src="assets/shorts-classic-front.png" alt="Classic Grappling Shorts" style="max-width:100%;max-height:100%;object-fit:contain"></div>
+        <div style="aspect-ratio:4/5;background:radial-gradient(closest-side,#191919,#121212);display:flex;align-items:center;justify-content:center;padding:8%"><img loading="lazy" decoding="async" src="assets/shorts-classic-front.webp" alt="Classic Grappling Shorts" style="max-width:100%;max-height:100%;object-fit:contain"></div>
         <div style="padding:16px 16px 18px;display:flex;justify-content:space-between"><span style="font-weight:600;font-size:15px;color:#F1EDE4">Classic Grappling Shorts</span><span style="font-family:Oswald,sans-serif;font-size:16px;color:#F1EDE4">$55</span></div>
       </a>
       <a href="shop.html" style="display:block;background:#121212;border:1px solid #1F1D1B" style-hover="border-color:#35312d">
-        <div style="aspect-ratio:4/5;background:radial-gradient(closest-side,#191919,#121212);display:flex;align-items:center;justify-content:center;padding:8%"><img src="assets/shorts-suits-front.png" alt="Suits Grappling Shorts" style="max-width:100%;max-height:100%;object-fit:contain"></div>
+        <div style="aspect-ratio:4/5;background:radial-gradient(closest-side,#191919,#121212);display:flex;align-items:center;justify-content:center;padding:8%"><img loading="lazy" decoding="async" src="assets/shorts-suits-front.webp" alt="Suits Grappling Shorts" style="max-width:100%;max-height:100%;object-fit:contain"></div>
         <div style="padding:16px 16px 18px;display:flex;justify-content:space-between"><span style="font-weight:600;font-size:15px;color:#F1EDE4">Suits Grappling Shorts</span><span style="font-family:Oswald,sans-serif;font-size:16px;color:#F1EDE4">$55</span></div>
       </a>
       <a href="gi.html" style="display:block;background:#121212;border:1px solid #1F1D1B" style-hover="border-color:#35312d">
-        <div style="aspect-ratio:4/5;background:radial-gradient(closest-side,#191919,#121212);display:flex;align-items:center;justify-content:center;padding:8%"><img src="assets/gi-black-jacket-front.png" alt="Classic Gi — Black" style="max-width:100%;max-height:100%;object-fit:contain"></div>
+        <div style="aspect-ratio:4/5;background:radial-gradient(closest-side,#191919,#121212);display:flex;align-items:center;justify-content:center;padding:8%"><img loading="lazy" decoding="async" src="assets/gi-black-jacket-front.webp" alt="Classic Gi — Black" style="max-width:100%;max-height:100%;object-fit:contain"></div>
         <div style="padding:16px 16px 18px;display:flex;justify-content:space-between"><span style="font-weight:600;font-size:15px;color:#F1EDE4">Classic Gi — Black</span><span style="font-family:Oswald,sans-serif;font-size:16px;color:#F1EDE4">$185</span></div>
       </a>
     </div>
@@ -172,7 +174,7 @@ a{color:#F1EDE4;text-decoration:none}a:hover{color:#C8452C}
 
 <footer style="border-top:1px solid #1F1D1B">
   <div style="max-width:1360px;margin:0 auto;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#6b6660">
-    <span>© MMXXVI THE JITZ GUILD · <a href="#" style="color:#6b6660" style-hover="color:#C8452C">Privacy</a> · <a href="#" style="color:#6b6660" style-hover="color:#C8452C">Terms</a></span>
+    <span>© MMXXVI THE JITZ GUILD · <a href="privacy.html" style="color:#6b6660" style-hover="color:#C8452C">Privacy</a> · <a href="terms.html" style="color:#6b6660" style-hover="color:#C8452C">Terms</a></span>
     <span style="letter-spacing:10px;color:#4d4a46">♠ ♥ ♣ ♦</span>
     <a href="index.html" style="color:#8D8D8D;letter-spacing:2px" style-hover="color:#C8452C">← BACK TO HOME</a>
   </div>

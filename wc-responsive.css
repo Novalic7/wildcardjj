@@ -12,6 +12,40 @@
 html, body { max-width: 100%; overflow-x: hidden; }
 img { max-width: 100%; }
 
+/* ---- Mobile navigation (hamburger + slide-in drawer) ----
+   Built by mobile-nav.js. Hidden on desktop; revealed at <=760px. ---- */
+.wc-drawer, .wc-backdrop { display: none; }
+.wc-burger {
+  display: none; position: fixed; top: 46px; left: 12px; z-index: 80;
+  background: rgba(10,10,10,.92); border: 1px solid #2a2724; border-radius: 3px;
+  width: 44px; height: 40px; cursor: pointer; padding: 0;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.wc-burger span { display: block; width: 20px; height: 2px; background: #F1EDE4; transition: none; }
+.wc-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 90; }
+.wc-backdrop.open { display: block; }
+.wc-drawer {
+  position: fixed; top: 0; left: 0; height: 100%; width: 82%; max-width: 340px;
+  background: #0D0C0B; border-right: 1px solid #1F1D1B; z-index: 100;
+  transform: translateX(-100%); transition: transform .25s ease;
+  padding: 24px 0; box-sizing: border-box; overflow-y: auto;
+}
+.wc-drawer.open { display: block; transform: translateX(0); }
+.wc-drawer-close {
+  position: absolute; top: 14px; right: 16px; background: none; border: none;
+  color: #8D8D8D; font-size: 30px; line-height: 1; cursor: pointer;
+}
+.wc-drawer-brand { padding: 10px 28px 22px; letter-spacing: 8px; color: #4d4a46; font-size: 14px; }
+.wc-drawer ul { list-style: none; margin: 0; padding: 0; }
+.wc-drawer li { border-top: 1px solid #17150F; }
+.wc-drawer a {
+  display: block; padding: 17px 28px; color: #F1EDE4;
+  font-family: Oswald, sans-serif; font-weight: 500; font-size: 18px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.wc-drawer a:hover { color: #C8452C; background: #121212; }
+@media (prefers-reduced-motion: reduce) { .wc-drawer { transition: none; } }
+
 /* ---- Tablet / small desktop: drop the fixed width, tighten gutters ----
    Breakpoint matches the prototype's 1180px min-width so there's no
    horizontal-scroll gap for narrow desktop windows. ---- */
@@ -35,8 +69,9 @@ img { max-width: 100%; }
     justify-content: space-between !important; height: auto !important;
     gap: 14px !important; padding-top: 12px !important; padding-bottom: 12px !important;
   }
-  /* Hide the desktop nav (no hamburger yet — tracked for the rebuild) */
+  /* Hide the desktop nav; the hamburger drawer replaces it on phones */
   nav[aria-label="Primary"] { display: none !important; }
+  .wc-burger { display: flex !important; }
 
   /* Wide flex rows (announcement bar, etc.) wrap instead of overflowing */
   [style*="gap: 40px"], [style*="gap:40px"] { gap: 12px !important; flex-wrap: wrap !important; }
